@@ -3,6 +3,7 @@ Approach #1:
 - Every round check which subject has the most 'not found' errors and optimize next round to solve that (XGB)
 - Identify out of 25 class redo, most % is for 'IT', next for 'Library', etc
 	- Solve for them first??
+	- Compute the correlation matrix along column to pick a combination with the least resultant correlation??
 
 Approach #2:
 ============
@@ -12,4 +13,27 @@ Approach #2:
 Approach #3:
 ============
 - When deciding which teacher to pick, find one with potential for least overlap??
-- Teacher redo? as a subset of class redo
+- Teacher redo? as a subset of class redo || Isn't it already present? We iterate through all the teachers
+- Partial full redo?
+	- Cross class redo: Check which class is clashing and redo only that class
+
+
+Pseudocode:
+===========
+
+for class in classList:
+	for subj in subjCountMap:
+		eligibleTeachers = findEligibleTeachers()
+		for teacher in eligibleTeachers:
+			validPeriodCount = 0
+			for dayPeriod in dayPeriods:
+				if teacher valid for dayPeriod:
+					inc validPeriodCount
+			if validPeriodCount > subjReq
+				Choose the teacher
+			else
+				continue with next teacher
+		if teacher still not found:
+			retry the class
+	if classRetry > threshold:
+		retry the whole schedule
