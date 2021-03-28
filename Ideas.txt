@@ -1,0 +1,15 @@
+Approach #1:
+============
+- Every round check which subject has the most 'not found' errors and optimize next round to solve that (XGB)
+- Identify out of 25 class redo, most % is for 'IT', next for 'Library', etc
+	- Solve for them first??
+
+Approach #2:
+============
+- Currently for every class we iterate from most occuring subject in the class to least occuring subject in the class
+- Evaluate importance not by subject -> count in a class but subject -> {num of required periods}/{num teacher} [IT -> 23/1 (23), Maths.IV -> 40/2 (20), EVS.IV -> 36/2 (19) ]
+
+Approach #3:
+============
+- When deciding which teacher to pick, find one with potential for least overlap??
+- Teacher redo? as a subset of class redo

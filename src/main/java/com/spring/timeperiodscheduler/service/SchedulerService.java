@@ -56,74 +56,149 @@ public class SchedulerService {
     subjectList = List.of(maths, hindi, english, evs, gk, cca, pt, it, ac, music, library);
     subjectList = new ArrayList<>(subjectList);
 
-    Teacher t1 = new Teacher("T1", 0, 24, Set.of(maths, gk, cca, pt, it, ac, music, library));
-    Teacher t2 = new Teacher("T2", 0, 24, Set.of(hindi, gk, cca, pt, it, ac, music, library));
-    Teacher t3 = new Teacher("T3", 0, 24, Set.of(english, gk, cca, pt, it, ac, music, library));
-    Teacher t4 = new Teacher("T4", 0, 24, Set.of(evs, gk, cca, pt, it, ac, music, library));
-    Teacher t5 = new Teacher("T5", 0, 24, Set.of(maths, gk, cca, pt, it, ac, music, library));
-    Teacher t6 = new Teacher("T6", 0, 24, Set.of(hindi, gk, cca, pt, it, ac, music, library));
-    Teacher t7 = new Teacher("T7", 0, 24, Set.of(english, gk, cca, pt, it, ac, music, library));
-    Teacher t8 = new Teacher("T8", 0, 24, Set.of(evs, gk, cca, pt, it, ac, music, library));
-    Teacher t9 = new Teacher("T9", 0, 24, Set.of(maths, gk, cca, pt, it, ac, music, library));
-    Teacher t10 = new Teacher("T10", 0, 24, Set.of(hindi, gk, cca, pt, it, ac, music, library));
-    Teacher t11 = new Teacher("T11", 0, 24, Set.of(english, gk, cca, pt, it, ac, music, library));
-    Teacher t12 = new Teacher("T12", 0, 24, Set.of(evs, gk, cca, pt, it, ac, music, library));
-    teacherList = List.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12);
+    // III
+    Teacher t1 = new Teacher("Preet S", 0, 24, Set.of(english, cca, gk));
+    Teacher t2 = new Teacher("Aparna", 0, 24, Set.of(evs, cca, gk));
+    Teacher t3 = new Teacher("Meena N", 0, 24, Set.of(hindi, cca, gk)); // III & V
+    Teacher t4 = new Teacher("New Maths Tr", 0, 24, Set.of(maths, cca, gk));
+    Teacher t5 = new Teacher("Tanushree", 0, 24, Set.of(english, cca, gk));
+    Teacher t6 = new Teacher("M Lata", 0, 24, Set.of(hindi, cca, gk));
+    // IV
+    Teacher t7 = new Teacher("Reshmi", 0, 24, Set.of(evs, cca, gk));
+    Teacher t8 = new Teacher("Jayashree", 0, 24, Set.of(evs, cca, gk));
+    Teacher t9 = new Teacher("Sindhu R", 0, 24, Set.of(maths, cca, gk));
+    Teacher t10 = new Teacher("Vaishali", 0, 24, Set.of(english, cca, gk));
+    Teacher t11 = new Teacher("Seema R", 0, 24, Set.of(english, cca, gk));
+    Teacher t12 = new Teacher("Kamini", 0, 24, Set.of(hindi, cca, gk));
+    Teacher t13 = new Teacher("Mini", 0, 24, Set.of(maths, cca, gk));
+    Teacher t14 = new Teacher("Sheela", 0, 24, Set.of(hindi, cca, gk));
+    // V
+    Teacher t15 = new Teacher("Preeti", 0, 24, Set.of(hindi, cca, gk));
+    Teacher t16 = new Teacher("Soma", 0, 24, Set.of(maths, cca, gk));
+    Teacher t17 = new Teacher("Sachita", 0, 24, Set.of(english, evs, cca, gk));
+    Teacher t18 = new Teacher("Jyoti", 0, 24, Set.of(evs, cca, gk));
+    Teacher t19 = new Teacher("Sunita", 0, 24, Set.of(english, cca, gk));
+    Teacher t20 = new Teacher("Sureka", 0, 24, Set.of(hindi, cca, gk));
+    Teacher t21 = new Teacher("Bindhya", 0, 24, Set.of(maths, cca, gk));
+    Teacher t22 = new Teacher("Sai", 0, 24, Set.of(evs, cca, gk));
+    Teacher t23 = new Teacher("Regy", 0, 24, Set.of(english, cca, gk));
+    // Secondary
+    Teacher t24 = new Teacher("PT teacher 1", 0, 24, Set.of(pt));
+    Teacher t25 = new Teacher("PT teacher 2", 0, 24, Set.of(pt));
+    Teacher t26 = new Teacher("Art & Craft teacher", 0, 24, Set.of(ac));
+    Teacher t27 = new Teacher("Music teacher", 0, 24, Set.of(music));
+    Teacher t28 = new Teacher("IT teacher", 0, 24, Set.of(it));
+    Teacher t29 = new Teacher("Library teacher", 0, 24, Set.of(library));
+    // Cross section teachers
+    Teacher t30 = new Teacher("Asha", 0, 24, Set.of(maths)); // III & V
+    Teacher t31 = new Teacher("Sushmita", 0, 24, Set.of(evs));  // III & II
+    Teacher t32 = new Teacher("Asha", 0, 24, Set.of(maths)); // V (Testing)
+
+//    teacherList = List.of(t7, t8, t9, t10, t11, t12, t13, t14, t24, t25, t26, t27, t28, t29, t30);
+    teacherList = List.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t30, t31, t32);
 //    teacherList = List.of(t1, t2, t3, t4, t5, t6, t7, t8);
 //    teacherList = List.of(t1, t2, t3, t4);
     teacherList = new ArrayList<>(teacherList);
 
-    // Remove CCA since its a default
-    Class c1 = new Class("C1", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, library, 1, it, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    // III
+    Class c1 = new Class("III A", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, library, 1, it, 1),
+        Set.of(t1, t2, t3, t4, t5, t6, t24, t25, t26, t27, t28, t29, t30, t31));
     c1.setSubjectCountMap(new HashMap<>(c1.getSubjectCountMap()));
     c1.getSubjectCountMap().put(cca, 1);
-    Class c2 = new Class("C2", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c2 = new Class("III B", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t1, t2, t3, t4, t5, t6, t24, t25, t26, t27, t28, t29, t30, t31));
     c2.setSubjectCountMap(new HashMap<>(c2.getSubjectCountMap()));
     c2.getSubjectCountMap().put(cca, 1);
-    Class c3 = new Class("C3", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c3 = new Class("III C", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t1, t2, t3, t4, t5, t6, t24, t25, t26, t27, t28, t29, t30, t31));
     c3.setSubjectCountMap(new HashMap<>(c3.getSubjectCountMap()));
     c3.getSubjectCountMap().put(cca, 1);
-    Class c4 = new Class("C4", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c4 = new Class("III D", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t1, t2, t3, t4, t5, t6, t24, t25, t26, t27, t28, t29, t30, t31));
     c4.setSubjectCountMap(new HashMap<>(c4.getSubjectCountMap()));
     c4.getSubjectCountMap().put(cca, 1);
-    Class c5 = new Class("C5", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c5 = new Class("III E", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t1, t2, t3, t4, t5, t6, t24, t25, t26, t27, t28, t29, t30, t31));
     c5.setSubjectCountMap(new HashMap<>(c5.getSubjectCountMap()));
     c5.getSubjectCountMap().put(cca, 1);
-    Class c6 = new Class("C6", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c6 = new Class("III F", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t1, t2, t3, t4, t5, t6, t24, t25, t26, t27, t28, t29, t30, t31));
     c6.setSubjectCountMap(new HashMap<>(c6.getSubjectCountMap()));
     c6.getSubjectCountMap().put(cca, 1);
-    Class c7 = new Class("C7", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    // IV
+    Class c7 = new Class("IV A", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t7, t8, t9, t10, t11, t12, t13, t14, t24, t25, t26, t27, t28, t29));
     c7.setSubjectCountMap(new HashMap<>(c7.getSubjectCountMap()));
     c7.getSubjectCountMap().put(cca, 1);
-    Class c8 = new Class("C8", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c8 = new Class("IV B", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t7, t8, t9, t10, t11, t12, t13, t14, t24, t25, t26, t27, t28, t29));
     c8.setSubjectCountMap(new HashMap<>(c8.getSubjectCountMap()));
     c8.getSubjectCountMap().put(cca, 1);
-    Class c9 = new Class("C9", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c9 = new Class("IV C", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t7, t8, t9, t10, t11, t12, t13, t14, t24, t25, t26, t27, t28, t29));
     c9.setSubjectCountMap(new HashMap<>(c9.getSubjectCountMap()));
     c9.getSubjectCountMap().put(cca, 1);
-    Class c10 = new Class("C10", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c10 = new Class("IV D", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t7, t8, t9, t10, t11, t12, t13, t14, t24, t25, t26, t27, t28, t29));
     c10.setSubjectCountMap(new HashMap<>(c10.getSubjectCountMap()));
     c10.getSubjectCountMap().put(cca, 1);
-    Class c11 = new Class("C11", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c11 = new Class("IV E", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t7, t8, t9, t10, t11, t12, t13, t14, t24, t25, t26, t27, t28, t29));
     c11.setSubjectCountMap(new HashMap<>(c11.getSubjectCountMap()));
     c11.getSubjectCountMap().put(cca, 1);
-    Class c12 = new Class("C12", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
-        Set.of(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
+    Class c12 = new Class("IV F", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+        Set.of(t7, t8, t9, t10, t11, t12, t13, t14, t24, t25, t26, t27, t28, t29));
     c12.setSubjectCountMap(new HashMap<>(c12.getSubjectCountMap()));
     c12.getSubjectCountMap().put(cca, 1);
+    Class c13 = new Class("IV G", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t7, t8, t9, t10, t11, t12, t13, t14, t24, t25, t26, t27, t28, t29));
+    c13.setSubjectCountMap(new HashMap<>(c13.getSubjectCountMap()));
+    c13.getSubjectCountMap().put(cca, 1);
+    Class c14 = new Class("IV H", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t7, t8, t9, t10, t11, t12, t13, t14, t24, t25, t26, t27, t28, t29));
+    c14.setSubjectCountMap(new HashMap<>(c14.getSubjectCountMap()));
+    c14.getSubjectCountMap().put(cca, 1);
+    // V
+    Class c15 = new Class("V A", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t32));
+    c15.setSubjectCountMap(new HashMap<>(c15.getSubjectCountMap()));
+    c15.getSubjectCountMap().put(cca, 1);
+    Class c16 = new Class("V B", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t32));
+    c16.setSubjectCountMap(new HashMap<>(c16.getSubjectCountMap()));
+    c16.getSubjectCountMap().put(cca, 1);
+    Class c17 = new Class("V C", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t32));
+    c17.setSubjectCountMap(new HashMap<>(c17.getSubjectCountMap()));
+    c17.getSubjectCountMap().put(cca, 1);
+    Class c18 = new Class("V D", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t32));
+    c18.setSubjectCountMap(new HashMap<>(c18.getSubjectCountMap()));
+    c18.getSubjectCountMap().put(cca, 1);
+    Class c19 = new Class("V E", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t32));
+    c19.setSubjectCountMap(new HashMap<>(c19.getSubjectCountMap()));
+    c19.getSubjectCountMap().put(cca, 1);
+    Class c20 = new Class("V F", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t32));
+    c20.setSubjectCountMap(new HashMap<>(c20.getSubjectCountMap()));
+    c20.getSubjectCountMap().put(cca, 1);
+    Class c21 = new Class("V G", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t32));
+    c21.setSubjectCountMap(new HashMap<>(c21.getSubjectCountMap()));
+    c21.getSubjectCountMap().put(cca, 1);
+    Class c22 = new Class("V H", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t32));
+    c22.setSubjectCountMap(new HashMap<>(c22.getSubjectCountMap()));
+    c22.getSubjectCountMap().put(cca, 1);
+    Class c23 = new Class("V I", Map.of(english, 4, hindi, 4, maths, 5, evs, 4, gk, 1, pt, 1, ac, 1, music, 1, it, 1, library, 1),
+            Set.of(t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t32));
+    c23.setSubjectCountMap(new HashMap<>(c23.getSubjectCountMap()));
+    c23.getSubjectCountMap().put(cca, 1);
 
-    classList = List.of(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11);
+//    classList = List.of(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23);
+    classList = List.of(c1, c2, c3, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23);
+//    classList = List.of(c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23);
 //    classList = List.of(c1, c2, c3, c4, c5, c6, c7, c8);
 
     defaultSubjects = new HashMap<>();
@@ -139,6 +214,17 @@ public class SchedulerService {
     defaultSubjects.put(new TimeTableKey(c10.getName(), numDays, numPeriodsPerDay), cca);
     defaultSubjects.put(new TimeTableKey(c11.getName(), numDays, numPeriodsPerDay), cca);
     defaultSubjects.put(new TimeTableKey(c12.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c13.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c14.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c15.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c16.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c17.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c18.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c19.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c20.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c21.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c22.getName(), numDays, numPeriodsPerDay), cca);
+    defaultSubjects.put(new TimeTableKey(c23.getName(), numDays, numPeriodsPerDay), cca);
 
     daySubjectsDefaultsMap = new HashMap<>();
     daySubjectsDefaultsMap.put(6, Set.of(maths, evs, english, hindi, cca, gk));
@@ -159,6 +245,8 @@ public class SchedulerService {
     while (redo.get()) {
       redo.set(false);
       tryCount++;
+      if (tryCount %100 == 0)
+        LOGGER.warn("Attempt #" + tryCount);
       if (tryCount > maxFullRetryCount) {
         LOGGER.error("Couldn't schedule, timed out! ");
         break;
@@ -301,7 +389,7 @@ public class SchedulerService {
             } // Eligible teachers FOR loop END
             if (!foundTeacher) {
               // Attempt for class retry if this is the case
-              LOGGER.info("Oops no teacher found, retrying the scheduling!");
+              LOGGER.warn("Oops no teacher found to teach " + subject + " for class " + classObj.getName() +  ", retrying the scheduling!");
               LOGGER.info(timeTable.toString());
               redoClassOnly = true;
               // Don't process any more subjects, need to redo the class
